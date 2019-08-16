@@ -27,7 +27,7 @@ for file_idx = 1:numel(files4ICA)
     curr_sub = strsplit(curr_file, '_');
     curr_sub = curr_sub{1};
     
-    colon = strfind(curr_sub, ':');
+    colon = strfind(curr_sub, '!');
     if ~isempty(colon) % deal with :
         curr_sub = curr_sub(1:(colon - 1));
     end
@@ -62,8 +62,9 @@ for file_idx = 1:numel(files4ICA)
     myCurrentOutputFile = strcat(curr_fn{1}, 'postICA.set');
     
     myCurrentInputFile = which(curr_file); %this is awesome
-    
-    newfolder_fn = strsplit(myCurrentInputFile, '/');
+    %This is adjustment for win \, need to be / if linux
+    %%Todo: add automatic adjustment based on system 
+    newfolder_fn = strsplit(myCurrentInputFile, '\');
     newfolder_fn = newfolder_fn{numel(newfolder_fn)-1};
     newfolder_fn = strsplit(newfolder_fn, 'cleaned');
     myOutputFolder = fullfile(options.myPostICAFolder, strcat(newfolder_fn{1}, '_postICA'));

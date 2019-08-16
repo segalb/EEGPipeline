@@ -169,12 +169,12 @@ Pre_ICA_clumping(options); %puts together shorter segments to keep ICA viable
 filtering(options); %filters and epochs data
 
 %--ICA
+%%fix the ICA it's not ready yet
+IS_ICA(options);
 
-%IS_ICA(options);
-
-%Artifact_Removal(options); %can also remove EMG and/or Other artifacts (set above)
-%de_clumping(options);
-%Epoch_Removal(options); %removes bad epochs and rereferences
+Artifact_Removal(options); %can also remove EMG and/or Other artifacts (set above)
+de_clumping(options);
+Epoch_Removal(options); %removes bad epochs and rereferences
 
 %--Power Extraction
 
