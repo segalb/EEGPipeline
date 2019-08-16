@@ -162,8 +162,11 @@ RidTTL_loop(options); %Needs to have the .xlsx files set up already
 make_eeg_lab_data(options); %separates participants in dyad and creates indiv files. Also downsamples to 250 Hz
 
 segmentation(options); %deals with some but not all extra ttls
-%Pre_ICA_clumping(options); %puts together shorter segments to keep ICA viable
-%filtering(options); %filters and epochs data
+
+%%This doesnot even work because our TTl is nothere
+%%TODO: to fix this and add our TTL if we want to preclump
+Pre_ICA_clumping(options); %puts together shorter segments to keep ICA viable
+filtering(options); %filters and epochs data
 
 %--ICA
 

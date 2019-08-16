@@ -80,8 +80,8 @@ for sub_idx = 1:length(subs)
                 
                 myCurrentInputFile = strcat(num2str(curr_sub), curr_ttl, '.set');
                 myCurrentOutputFile = strcat(num2str(curr_sub), curr_ttl, '_cleaned.set');
-                myCurrentFolder = fullfile(options.mySegmentsFolder, strcat(extractAfter(curr_ttl, ':_'))); %formerly clean
-                myOutputFolder = fullfile(options.myFilteredFilesFolder, strcat(extractAfter(curr_ttl, ':_'), '_cleaned'));
+                myCurrentFolder = fullfile(options.mySegmentsFolder, strcat(extractAfter(curr_ttl, '!_'))); %formerly clean
+                myOutputFolder = fullfile(options.myFilteredFilesFolder, strcat(extractAfter(curr_ttl, '!_'), '_cleaned'));
                 if ~isfolder(myOutputFolder), mkdir(myOutputFolder); end
                 addpath(myOutputFolder)
                 

@@ -19,10 +19,10 @@ Clumped Files Folder BallSqueezes has no data in it
 
 Filtering:
 
-Missing filtered files: !_Action_Coordination_indiv_cleaned
 Filtered Folder Action_Coordination_dual_cleaned has no data in it
 Filtered Folder BallSqueezes_cleaned has no data in it
 Filtered Folder Ice_Breaker_cleaned has no data in it
+Filtered Folder _cleaned has no data in it
 Filtered Folder partner_1s_negative_experience_cleaned has no data in it
 Filtered Folder partner_1s_positive_experience_cleaned has no data in it
 Filtered Folder partner_2s_negative_experience_cleaned has no data in it
