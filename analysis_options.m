@@ -13,6 +13,9 @@ elseif startsWith(pwd(), '/Users/gutsell')
 elseif startsWith(pwd(), '/Users/jeremysimon')
     options.base_dir = '/Users/jeremysimon/Google Drive/Grad_School/Dissertation/Interaction_Study/Preprocessing_Pipeline/';
     options.pipeline_dir = options.base_dir;
+elseif startsWith(pwd(), 'C:\Users\Benjamin\Desktop\CurrentProjects\EEgPipeline')
+    options.base_dir = 'C:\Users\Benjamin\Desktop\CurrentProjects\EEgPipeline\Data';
+    options.pipeline_dir = options.base_dir;
 else       
     error('Where are we??')
 end
