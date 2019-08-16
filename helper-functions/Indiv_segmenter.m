@@ -16,7 +16,7 @@ for ttl_idx = 1:numel(indiv_ttls.names)
     fprintf('\nSegmentation: Working on file number: %d now\n\n', myCounter);
     
     %make special folder for each TTL
-    segment_folder = fullfile(options.mySegmentsFolder, extractAfter(options.indiv_ttls.names{ttl_idx}, ":_"));
+    segment_folder = fullfile(options.mySegmentsFolder, extractAfter(options.indiv_ttls.names{ttl_idx}, "!_"));
     if ~isdir(segment_folder)
         mkdir(segment_folder)
     end
@@ -69,6 +69,8 @@ for ttl_idx = 1:numel(indiv_ttls.names)
                 EEG = eeg_checkset( EEG2 );
                 EEG = pop_epoch( EEG, {  ttl  }, [seg_start  seg_end], 'newname', seg_name, 'epochinfo', 'yes');
                 %save file
+                fprintf('\ndelete 1: %s \n\n', EEG.setname);
+                fprintf('\ndelete 2: %s \n\n', segment_folder);
                 EEG = pop_saveset( EEG,'filename', EEG.setname,'filepath', segment_folder);
             end
         else

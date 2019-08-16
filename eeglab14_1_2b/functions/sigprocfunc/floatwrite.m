@@ -76,6 +76,7 @@ if strcmpi(transp,'normal')
             end;
         end;
     else
+        disp(fname);
         fid = fopen(fname,'wb',fform);
         if fid == -1, error('Cannot write output file, check permission and space'); end;
         fwrite(fid,A,'float');

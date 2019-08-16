@@ -1,0 +1,3 @@
+
+Sub 1002.0 has extra TTLs:
+ 2 of marker S200, which is 1002!_Action_Coordination_indiv 

@@ -16,7 +16,7 @@ if strcmp(options.analysis_type, 'Dyad') ~= 1
             myCurrentInputFile =  strcat(num2str(sub_idx),'.vhdr');
             myCurrentFileName =   strcat(num2str(sub_idx), '_indiv');
             myCurrentOutputFile = strcat(num2str(sub_idx),'_indiv.set');
-            
+
             if ~ismember(myCurrentInputFile, options.present_files)  %make sure file is there
                 continue
             end
@@ -70,7 +70,7 @@ if strcmp(options.analysis_type, 'Indiv') ~= 1
         if ~ismember(dyad_idx, options.exclusions)
             
             myCounter=myCounter+1;
-            fprintf('\nMake EEGLAB data: Working on dyad file number: %d now\n\n', myCounter);
+            fprintf('\nMake EEGLAB data: Working on dyad file numbergg: %d now\n\n', myCounter);
             %insert here which file the analysis will be performed on, and how it should be saved - follow study naming conventions.
             
             myCurrentInputFile =  strcat(num2str(dyad_idx),'.vhdr');

@@ -67,12 +67,12 @@ hold off; close all
 config_options.job_name = 'Full_Run_No_Images_5.24';
 
 %--analysis type
-config_options.analysis_type = 'Dyad'; % 'Dyad' | 'Indiv' | 'Both'
+config_options.analysis_type = 'Indiv'; % 'Dyad' | 'Indiv' | 'Both'
 
 %--select participants
 %%if commented out, will use all files%%
-config_options.Dyads = [14]; % set this to the Dyad files you want (dyad #, not indiv #!)
-%config_options.Indivs = [1034 2034]; %set this to the Individual files you want
+%config_options.Dyads = [14]; % set this to the Dyad files you want (dyad #, not indiv #!)
+config_options.Indivs = [1002]; %set this to the Individual files you want
 
 %--set exclusions
 config_options.exclusions = [6]; %set exclusions here.
@@ -117,6 +117,7 @@ config_options.pfreq_high = 13;
 
 %--set ttls to segment here (defaults to all)
 %config_options.dyad_ttls.names =  {':_Action_Coordination_dual'};
+config_options.indiv_ttls.names = {'!_Action_Coordination_indiv' }
 % config_options.indiv_ttls.names = {
 %   ':_black_hand_1', ...
 %     ':_black_hand_2', ...
@@ -159,22 +160,27 @@ eeglab; close
 %--Pre-Processing
 RidTTL_loop(options); %Needs to have the .xlsx files set up already
 make_eeg_lab_data(options); %separates participants in dyad and creates indiv files. Also downsamples to 250 Hz
+
 segmentation(options); %deals with some but not all extra ttls
-Pre_ICA_clumping(options); %puts together shorter segments to keep ICA viable
-filtering(options); %filters and epochs data
+%Pre_ICA_clumping(options); %puts together shorter segments to keep ICA viable
+%filtering(options); %filters and epochs data
 
 %--ICA
-IS_ICA(options);
-Artifact_Removal(options); %can also remove EMG and/or Other artifacts (set above)
-de_clumping(options);
-Epoch_Removal(options); %removes bad epochs and rereferences
+
+%IS_ICA(options);
+
+%Artifact_Removal(options); %can also remove EMG and/or Other artifacts (set above)
+%de_clumping(options);
+%Epoch_Removal(options); %removes bad epochs and rereferences
 
 %--Power Extraction
-power_extraction(options);
+
+%power_extraction(options);
 
 %--Topographic Mapping
-Topographic_Maps(options);
-save_figures_as(options);  %can save as as any extension saveas() supports
+
+%Topographic_Maps(options);
+%save_figures_as(options);  %can save as as any extension saveas() supports
 
 %--Audit files created in pipeline
 Auditor(options);
